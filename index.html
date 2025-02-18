@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wiki</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <input type="text" id="busca">
+    
+        </nav>
+    </header>
+    <main>
+        <article>
+            <h1><q cite="https://pt.wikipedia.org/wiki/Arcane">Arcane</q></h1>
+            <p id="descricao">Arcane (oficialmente intitulada como Arcane: League of Legends) é uma série de televisão de animação adulta, dos gêneros ação e aventura, criada por Christian Linke e Alex Yee e distribuída pela Netflix. O show, produzido pelo estúdio de animação francês Fortiche sob a supervisão da Riot Games, é ambientado no universo fictício de League of Legends e sua trama é primariamente focada nas irmãs Violet / "Vi" (Hailee Steinfeld) e Powder / Jinx (Ella Purnell) enquanto se envolvem em um conflito entre sua região natal, Zaun, e a cidade de Piltover. A série, que foi anunciada durante a comemoração do aniversário de dez anos de League of Legends, teve sua primeira temporada lançada entre 6 e 20 novembro de 2021, enquanto a segunda e última temporada foi lançada entre 9 e 23 de novembro de 2024</p>
+            <details>
+                <summary>
+                    Segunda Temporada
+                </summary>
+                <p>No agregador de análises Rotten Tomatoes, a segunda temporada recebeu um índice de aprovação de 100% baseado em 31 avaliações, com uma classificação média de 9/10. O consenso crítico do site diz: "Expansivo em escopo enquanto avança em direção ao fim de jogo em um ritmo acelerado, a segunda e última temporada de Arcane é um final extremamente satisfatório para uma saga épica."[56] O agregador de avaliações Metacritic, que usa uma média ponderada, atribuiu à segunda temporada uma classificação de 86 de 100 com base em sete análises, indicando <blockquote>"aclamação universal"</blockquote>.</p>
+            </details>
+            <figure>
+                <img src="https://img.goodfon.com/original/3840x2160/c/45/arcane-jinx-vi.jpg" alt="Cartaz promocional de Arcane" width="500px" height="300px">
+            </figure>
+            <h2>Premissa</h2>
+            <p id="descricao">Em meio a crescentes tensões entre a rica e utópica cidade de Piltover e a decadente e oprimida cidade de Zaun, as irmãs Vi e Jinx encontram-se nos lados opostos de uma guerra em curso envolvendo convicções conflitantes e tecnologias misteriosas.</p>
+        </article>
+
+        <script>
+            var searchField = document.getElementById('busca');
+            var descriptionObject = document.getElementById('descricao');
+            var textToSearch = descriptionObject.innerHTML;
+    
+            function realizaBusca(busca){
+                const regex = new RegExp(`(${busca})(?!(.(?!<mark))*</mark>)+`, 'ig');
+                const ocurrences = textToSearch.match(regex);
+                descriptionObject.innerHTML = textToSearch.replace(regex, `<mark>${busca}</mark>`)
+            }
+    
+            searchField.addEventListener('keyup', (e) => realizaBusca(e.target.value));
+        </script>
+    </main>
+    <footer></footer>
+</body>
+</html>
